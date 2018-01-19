@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="698.0" prefWidth="582.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Stacked_Infix_Postfix.Controller">
+   <children>
+      <Label layoutX="237.0" layoutY="43.0" text="Infix Expressions" textFill="#720000">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="228.0" layoutY="248.0" text="Postfix Expressions" textFill="#720000">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ListView fx:id="inEx" layoutX="22.0" layoutY="72.0" prefHeight="148.0" prefWidth="541.0">
+         <effect>
+            <InnerShadow blurType="TWO_PASS_BOX" />
+         </effect></ListView>
+      <Label layoutX="238.0" layoutY="452.0" text="Postfix Evaluations" textFill="#720000">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ListView fx:id="posEv" layoutX="21.0" layoutY="483.0" prefHeight="148.0" prefWidth="541.0">
+         <effect>
+            <InnerShadow blurType="TWO_PASS_BOX" />
+         </effect>
+      </ListView>
+      <ListView fx:id="posEx" layoutX="22.0" layoutY="279.0" prefHeight="148.0" prefWidth="541.0">
+         <effect>
+            <InnerShadow blurType="TWO_PASS_BOX" />
+         </effect>
+      </ListView>
+      <MenuBar prefHeight="20.0" prefWidth="582.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="load" mnemonicParsing="false" onAction="#loadData" text="Load Data" />
+                  <MenuItem fx:id="export" mnemonicParsing="false" onAction="#export" text="Export to a file" />
+                  <MenuItem fx:id="close" mnemonicParsing="false" onAction="#close" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Available Operations">
+            <items>
+              <MenuItem fx:id="showIn" mnemonicParsing="false" onAction="#showIn" text="Show Infix Expressions" />
+                  <MenuItem fx:id="showPost" mnemonicParsing="false" onAction="#showPost" text="Show Postfix Expressions" />
+                  <MenuItem fx:id="evPost" mnemonicParsing="false" onAction="#showEvs" text="Evaluate Postfix Expressions" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TextField fx:id="stat" editable="false" layoutX="124.0" layoutY="659.0" prefHeight="25.0" prefWidth="334.0" promptText="Status" />
+   </children>
+</AnchorPane>
